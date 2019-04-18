@@ -10,8 +10,8 @@ class ToDoList {
 
     fun printCommands() {
         println(
-            "Commands: \n" + "1. Print Todo List \n" + "2. Add task on table one \n" +
-                    "3. Add task on table two \n" + "4. Add task on table three \n" + "0. Exit"
+            "Commands: \n 1. Print Todo List \n 2. Add task on table one \n " +
+                    "3. Add task on table two \n 4. Add task on table three \n 0. Exit"
         )
     }
 
@@ -29,15 +29,18 @@ class ToDoList {
 
     fun displayList() {
         println("Table one")
-        for (i in topTasks.indices)
-            println((i + 1).toString() + ". " + topTasks[i].title)
+        topTasks.mapIndexed{i, task ->
+            "${i + 1}. ${task.title}"
+        }.forEach(:: println)
 
         println("Table two")
-        for(i in mediumTasks.indices)
-            println((i + 1).toString() + ". " + mediumTasks[i].title)
+        mediumTasks.mapIndexed{i, task ->
+            "${i + 1}. ${task.title}"
+        }.forEach(:: println)
 
         println("Table three")
-        for(i in lowTasks.indices)
-            println((i + 1).toString() + ". " + lowTasks[i].title)
+        lowTasks.mapIndexed{i, task ->
+            "${i + 1}. ${task.title}"
+        }.forEach(:: println)
     }
 }

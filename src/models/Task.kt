@@ -1,3 +1,3 @@
 package models
 
-data class Task (val id: Int, val title: String)
+data class Task (private val id: Int, val title: String)
