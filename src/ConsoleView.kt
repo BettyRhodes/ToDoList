@@ -27,6 +27,10 @@ import java.util.*
                     print("\nEnter task at table 3(Low priority): ")
                     list.addTaskOnTableThree(sc.nextLine())
                 }
+                "5" -> {
+                    print("\nEnter name of task: ")
+                    list.addComment(sc.nextLine())
+                }
 
                 else -> println("Enter correct choice:\n")
             }
